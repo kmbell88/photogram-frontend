@@ -51,7 +51,7 @@ const CreatePost = () => {
 
     let formData = new FormData();
     formData.append("postImg", imgFile);
-    formData.append("text", description);
+    formData.append("description", description);
     formData.append("userId", user._id);
 
     axios.post(url, formData,

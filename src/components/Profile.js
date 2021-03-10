@@ -55,7 +55,7 @@ const Profile = ({ profile }) => {
           <br />
           <div className="profile__header__user-details__stats">
             { profile.posts.length === 1 ?
-              <div className="user-posts"><span className="bold-text">1 post</span></div> :
+              <div className="user-posts"><span className="bold-text">1 </span>post</div> :
               <div className="user-posts"><span className="bold-text">{profile.posts.length}</span> posts</div>
             }
             { profile.followers.length === 1 ?

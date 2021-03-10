@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import { PhotogramContext } from '../contexts/PhotogramContext';
 import Cropper from 'cropperjs';
 import axios from 'axios';
 import "cropperjs/dist/cropper.min.css";
@@ -13,6 +14,7 @@ const CreateProfilePic = () => {
   });
   const [imageDestination, setImageDestination] = useState("");
   const imageElement = useRef(null);
+  const { user } = useContext(PhotogramContext);
 
   const handleImg = e => {
     if (e.target.files[0]) {
@@ -48,7 +50,7 @@ const CreateProfilePic = () => {
 
     let formData = new FormData();
     formData.append("postImg", imgFile);
-    formData.append("userId", "601a046e088bdf56ad7ea9df");
+    formData.append("userId", user._id);
 
     axios.post(url, formData,
       {
