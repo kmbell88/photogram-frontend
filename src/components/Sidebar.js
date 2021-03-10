@@ -62,7 +62,7 @@ const SuggestedUser = ({ profile }) => {
       return;
     }
 
-    axios.post(`${process.env.REACT_APP_BASE_URL}users/updateFollow`, {
+    axios.post(`${process.env.REACT_APP_HEROKU}users/updateFollow`, {
       userIdOne: user._id,
       userIdTwo: profile._id
     })

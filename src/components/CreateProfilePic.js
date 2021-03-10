@@ -38,7 +38,7 @@ const CreateProfilePic = () => {
   });
 
   const publishPost = () => {
-    let url = `${process.env.REACT_APP_BASE_URL}users/updatePic`
+    let url = `${process.env.REACT_APP_HEROKU}users/updatePic`
     let blob = base64ImageToBlob(imageDestination);
     let imgFile = new File([blob], alt, {
       type: "image/jpeg",

@@ -41,7 +41,7 @@ const CreatePost = () => {
   });
 
   const publishPost = () => {
-    let url = `${process.env.REACT_APP_BASE_URL}posts/createPost`
+    let url = `${process.env.REACT_APP_HEROKU}posts/createPost`
     let blob = base64ImageToBlob(imageDestination);
     let imgFile = new File([blob], alt, {
       type: "image/jpeg",

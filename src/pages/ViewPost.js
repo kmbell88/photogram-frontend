@@ -15,10 +15,10 @@ const ViewPost = ({ match }) => {
   }, [match.params.postId]);
 
   const getPageResources = (postId) => {
-    axios.get(`${process.env.REACT_APP_BASE_URL}posts/${postId}`)
+    axios.get(`${process.env.REACT_APP_HEROKU}posts/${postId}`)
     .then(res => {
       setPoster(res.data.postBody.postedBy);
-      return axios.get(`${process.env.REACT_APP_BASE_URL}users/username/${res.data.postBody.postedBy.username}`)
+      return axios.get(`${process.env.REACT_APP_HEROKU}users/username/${res.data.postBody.postedBy.username}`)
     })
     .then(res => {
       setMorePosts(res.data.posts.reverse());

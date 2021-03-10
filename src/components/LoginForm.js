@@ -45,7 +45,7 @@ const Login = ({ setLogin }) => {
       setErrorMessage("Please fill out all fields");
       return;
     }
-    axios.post(`${process.env.REACT_APP_BASE_URL}users/login`, {
+    axios.post(`${process.env.REACT_APP_HEROKU}users/login`, {
       username: userLogin,
       password: userPassword
     })
@@ -123,7 +123,7 @@ const Register = ({ setLogin }) => {
       setErrorMessage("The passwords provided do not match");
       return;
     }
-    axios.post(`${process.env.REACT_APP_BASE_URL}users/register`, {
+    axios.post(`${process.env.REACT_APP_HEROKU}users/register`, {
       username: registerUser,
       password: registerPW
     })

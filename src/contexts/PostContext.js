@@ -23,7 +23,7 @@ const PostProvider = ({ postId, children }) => {
   }, [post, user, postId]);
 
   const getPost = () => {
-    axios.get(`${process.env.REACT_APP_BASE_URL}posts/${postId}`)
+    axios.get(`${process.env.REACT_APP_HEROKU}posts/${postId}`)
       .then(res => {
         setPost(res.data);
         setPostLikes(res.data.likes.reverse());
@@ -45,7 +45,7 @@ const PostProvider = ({ postId, children }) => {
       postId: post._id
     };
 
-    axios.patch(`${process.env.REACT_APP_BASE_URL}posts/addComment`, form)
+    axios.patch(`${process.env.REACT_APP_HEROKU}posts/addComment`, form)
     .then(res => {
       let pushComment = {
         comment: newComment,
@@ -68,7 +68,7 @@ const PostProvider = ({ postId, children }) => {
       postId: post._id
     };
 
-    axios.patch(`${process.env.REACT_APP_BASE_URL}posts/likePost`, {
+    axios.patch(`${process.env.REACT_APP_HEROKU}posts/likePost`, {
       userId: user._id,
       postId: post._id,
       postAuthorId: post.postBody.postedBy._id,
@@ -91,7 +91,7 @@ const PostProvider = ({ postId, children }) => {
       alert('Please login or register to bookmark');
       return;
     }
-    axios.patch(`${process.env.REACT_APP_BASE_URL}users/updateBookmark`, {
+    axios.patch(`${process.env.REACT_APP_HEROKU}users/updateBookmark`, {
       userId: user._id,
       postId: post._id,
     })

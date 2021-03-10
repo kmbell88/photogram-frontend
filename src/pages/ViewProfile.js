@@ -14,7 +14,7 @@ const ViewProfile = ({ match }) => {
 
   const username = match.params.username;
   function getProfile() {
-    axios.get(`${process.env.REACT_APP_BASE_URL}users/username/${username}`)
+    axios.get(`${process.env.REACT_APP_HEROKU}users/username/${username}`)
     .then(res => {
       const axiosUser = res.data;
       setProfile(axiosUser);

@@ -20,8 +20,8 @@ const PhotogramProvider = ({ children }) => {
 
   const getAllUsersAndPosts = () => {
     axios.all([
-      axios.get(`${process.env.REACT_APP_BASE_URL}posts/`),
-      axios.get(`${process.env.REACT_APP_BASE_URL}users/`)
+      axios.get(`${process.env.REACT_APP_HEROKU}posts/`),
+      axios.get(`${process.env.REACT_APP_HEROKU}users/`)
     ])
       .then(res => {
         setAllPosts(res[0].data.reverse());
@@ -33,7 +33,7 @@ const PhotogramProvider = ({ children }) => {
   };
 
   const getUser = (userId) => {
-    axios.get(`${process.env.REACT_APP_BASE_URL}users/id/${userId}`)
+    axios.get(`${process.env.REACT_APP_HEROKU}users/id/${userId}`)
       .then(res => {
         setUser(res.data);
         setUsersFollowed(res.data.following);

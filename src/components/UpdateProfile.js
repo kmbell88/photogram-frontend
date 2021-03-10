@@ -46,7 +46,7 @@ const UpdateUsername = ({ user }) => {
       console.log("Usernames do not match");
       return;
     }
-    axios.patch(`${process.env.REACT_APP_BASE_URL}users/updateUsername`, { username: username, userId: user._id})
+    axios.patch(`${process.env.REACT_APP_HEROKU}users/updateUsername`, { username: username, userId: user._id})
       .then(res => {
         setUsername("");
       })
@@ -77,7 +77,7 @@ const UpdateDisplayName = ({ user }) => {
   const [ displayName, setDisplayName ] = useState("");
 
   function handleDisplayName() {
-    axios.patch(`${process.env.REACT_APP_BASE_URL}users/updateDisplayName`, { displayName: displayName, userId: user._id})
+    axios.patch(`${process.env.REACT_APP_HEROKU}users/updateDisplayName`, { displayName: displayName, userId: user._id})
       .then(res => {
         setDisplayName("");
       })
@@ -127,7 +127,7 @@ const UpdatePassword = ({ user }) => {
 
   function handlePassword() {
     console.log('clicked')
-    axios.patch(`${process.env.REACT_APP_BASE_URL}users/updatePassword`, { oldPassword: oldPassword, newPassword: newPassword, userId: user._id })
+    axios.patch(`${process.env.REACT_APP_HEROKU}users/updatePassword`, { oldPassword: oldPassword, newPassword: newPassword, userId: user._id })
       .then(res => {
         setOldPassword("");
         setNewPassword("");
@@ -175,7 +175,7 @@ const UpdateDescription = ({ user }) => {
   const [ description, setDescription ] = useState("");
 
   function handleUpdateDescription() {
-    axios.patch(`${process.env.REACT_APP_BASE_URL}users/updateDescription`, { description: description, userId: user._id })
+    axios.patch(`${process.env.REACT_APP_HEROKU}users/updateDescription`, { description: description, userId: user._id })
       .then(res => {
         setDescription("");
       })
@@ -203,7 +203,7 @@ const UpdateDescription = ({ user }) => {
 
 const DeactivateAccount = ({ user }) => {
   function handleDeactivateAccount() {
-    axios.patch(`${process.env.REACT_APP_BASE_URL}users/deactivate`, { active: false })
+    axios.patch(`${process.env.REACT_APP_HEROKU}users/deactivate`, { active: false })
     .then(res => {
       // Destroy localstorage, re-route to deactivated page.
     })
