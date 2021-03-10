@@ -1,0 +1,26 @@
+.edit-profile {
+  display: flex;
+  width: 95vw;
+  max-width: 1000px;
+  height: 600px;
+}
+
+.edit-profile__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-profile__left__li {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.edit-profile__right {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

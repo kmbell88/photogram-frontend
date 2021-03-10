@@ -1,0 +1,118 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.profile__header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.profile__header__img-container {
+  width: calc(100% / 3);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.profile__header__img-container img {
+  width: 150px;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 1px solid #dfdfdf;
+}
+
+.profile__header__user-details {
+  width: calc(100% / 3 * 2);
+}
+
+.profile__header__user-details__username .username {
+  font-size: 1.6em;
+  margin-right: 15px;
+}
+
+.profile__header__user-details__username .follow {
+  background-color: #0095f6;
+  color: #ffffff;
+  padding: 8px 10px 8px 10px;
+  border-radius: 3px;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.profile__header__user-details__username,
+.profile__header__user-details__stats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.profile__header__user-details__stats {
+  width: 300px;
+  justify-content: space-between;
+}
+
+.profile__header__user-details__display-name,
+.profile__header__user-details__description {
+  line-height: 1.6;
+}
+
+.profile__posts {
+  display: grid;
+  grid-template-columns: repeat(3, calc(100% / 3));
+  grid-auto-rows: auto;
+}
+
+.profile__posts__img-container {
+  margin: 15px;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.profile__posts__img-container:hover > .post-preview-overlay {
+  display: flex;
+}
+
+.post-preview-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.post-preview {
+  display: flex;
+  width: 100%;
+}
+
+.profile__hr {
+  border: 1px solid #cfcfcf;
+  border-top: 0;
+  width: 95%;
+}
+
+.bold-text {
+  font-weight: bold;
+  white-space: pre-wrap;
+}
+
+.preview-likes-container,
+.preview-comments-container {
+  display: flex;
+  flex-direction: row;
+}
